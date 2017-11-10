@@ -31,5 +31,6 @@
 	<classpathentry kind="lib" path="C:/Users/mick.mccarthy/Documents/testing/seleniumJavaSetUp/cucumber-junit-1.2.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mick.mccarthy/Documents/testing/seleniumJavaSetUp/cucumber-jvm-deps-1.0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mick.mccarthy/Documents/testing/seleniumJavaSetUp/gherkin-2.12.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mick.mccarthy/Documents/testing/seleniumJavaSetUp/cucumber-reports-0.0.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="features", glue="stepDefinitions")
-public class LoginTestRunner {
+@CucumberOptions(features="features", glue="stepDefinitions", plugin = {"pretty"})
+public class BookingTestRunner {
 
 }
