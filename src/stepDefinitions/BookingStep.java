@@ -6,7 +6,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
@@ -100,10 +102,12 @@ public class BookingStep {
 	@When("^I book my selection")
 	public void i_book_my_selection() {
 		driver.findElement(By.xpath("//a[contains(.,'Book Spa days')]")).click();
+		WebElement payButton = (new WebDriverWait(driver, 10))
+				  .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(.,'Pay Now')]")));
 	}
 	
 	@After
-	public void tearDown() {
-//		driver.quit();
+	public void tearDown() throws InterruptedException {
+		driver.quit();
 	}
 }

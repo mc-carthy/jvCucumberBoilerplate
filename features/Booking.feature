@@ -7,7 +7,7 @@ Feature: Booking a spa day
         Given I am on the Aquasana home page
         When I select Spa Days
         And I select Sherwood Forest from the Choose Your Spa dropdown
-        And I choose a day 14 days from now in the Date dropdown
+        And I choose a day 21 days from now in the Date dropdown
         And I set 2 days on the Flexibility dropdown
         And I click Search Now
         Then I should see many search results
