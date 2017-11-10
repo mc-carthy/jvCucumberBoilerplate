@@ -35,9 +35,13 @@ public class BookingStep {
 		new Select(driver.findElement(By.id("spaVillageCode"))).selectByVisibleText(venue);
 	}
 	
-	@When("^I choose tomorrow from the Date dropdown$")
-	public void i_choose_a_date_from_the_date_dropdown() {
-		driver.findElement(By.id("spaDayDatePicker")).sendKeys("\uE014", "Enter");
+	@When("^I choose a day (\\d+) days from now in the Date dropdown$")
+	public void i_choose_a_date_from_the_date_dropdown(int days) {
+		WebElement datePicker = driver.findElement(By.id("spaDayDatePicker"));
+		for (int i = 0; i < days; i++) {
+			datePicker.sendKeys("\uE014");
+		}
+		datePicker.sendKeys("Enter");
 	}
 
 	@When("^I set (\\d+) days on the Flexibility dropdown$")
@@ -84,7 +88,7 @@ public class BookingStep {
 				optionId = "4";
 				break;
 		}
-		driver.findElement(By.cssSelector("#option-" + optionId)).click();
+		driver.findElement(By.id("option-" + optionId)).click();
 	}
 	
 	@When("^I choose (\\d+) guests$")
@@ -100,6 +104,6 @@ public class BookingStep {
 	
 	@After
 	public void tearDown() {
-		driver.quit();
+//		driver.quit();
 	}
 }
