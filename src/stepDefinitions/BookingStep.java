@@ -64,9 +64,27 @@ public class BookingStep {
 		driver.findElement(By.xpath("//section[@class='b-search-results']/article[@class='b-product'][" + occurance + "]/div[@class='b-product__body']/div[@class='b-product__desc']/a")).click();
 	}
 
-	@When("^I select the first available date")
-	public void i_select_the_first_available_date() {
-		driver.findElement(By.cssSelector("#option-0")).click();
+	@When("^I select the (.*) available date")
+	public void i_select_the_first_available_date(String occurance) {
+		String optionId = "0";
+		switch (occurance) {
+			case ("first"):
+				optionId = "0";
+				break;
+			case ("second"):
+				optionId = "1";
+				break;
+			case ("third"):
+				optionId = "2";
+				break;
+			case ("fourth"):
+				optionId = "3";
+				break;
+			case ("fifth"):
+				optionId = "4";
+				break;
+		}
+		driver.findElement(By.cssSelector("#option-" + optionId)).click();
 	}
 	
 	@When("^I choose (\\d+) guests$")
